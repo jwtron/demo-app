@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Focus List</title>
+    <meta name="description" content="A compact task tracker for today." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-label="Task tracker">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Today</p>
+            <h1>Focus List</h1>
+          </div>
+          <div class="summary" aria-label="Task summary">
+            <span id="activeCount">0 active</span>
+            <span id="doneCount">0 done</span>
+          </div>
+        </header>
+
+        <form class="composer" id="taskForm">
+          <input
+            id="taskInput"
+            aria-label="New task"
+            autocomplete="off"
+            placeholder="What needs your attention?"
+          />
+          <button type="submit">Add</button>
+        </form>
+
+        <div class="controls" aria-label="Task filters">
+          <button class="selected" data-filter="all" type="button">All</button>
+          <button data-filter="active" type="button">Active</button>
+          <button data-filter="done" type="button">Done</button>
+          <button class="clear" id="clearDone" type="button">Clear done</button>
+        </div>
+
+        <ul class="taskList" id="taskList" aria-live="polite"></ul>
+        <p class="empty" id="emptyState" hidden>Nothing here right now.</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
